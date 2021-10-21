@@ -45,6 +45,11 @@
 			<artifactId>binance-api-client</artifactId>
 			<version>1.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.ta4j</groupId>
+			<artifactId>ta4j-core</artifactId>
+			<version>0.14</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -16,9 +16,17 @@ public class CandleMapper {
     public Candle candlestickEventToCandle(CandlestickEvent event) {
         return Candle.builder()
                 .numberOfTrades(event.getNumberOfTrades())
+                .duration(event.getCloseTime() - event.getOpenTime())
+                .volume(new BigDecimal(event.getVolume()))
+                .takerBuyBaseAssetVolume(new BigDecimal(event.getTakerBuyBaseAssetVolume()))
                 .symbol(event.getSymbol())
+                .eventTime(getDateTimeFromEpoch(event.getEventTime()))
                 .openTime(getDateTimeFromEpoch(event.getOpenTime()))
+                .closeTime(getDateTimeFromEpoch(event.getCloseTime()))
                 .openPrice(new BigDecimal(event.getOpen()))
+                .closePrice(new BigDecimal(event.getClose()))
+                .high(new BigDecimal(event.getHigh()))
+                .low(new BigDecimal(event.getLow()))
                 .build();
     }
 

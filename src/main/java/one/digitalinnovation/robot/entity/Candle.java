@@ -23,18 +23,34 @@ public class Candle {
     private Long id;
 
     private String symbol;
+    private Long duration;
 
     private Long numberOfTrades;
+    private BigDecimal volume;
+    private BigDecimal takerBuyBaseAssetVolume;
 
+    private LocalDateTime eventTime;
     private LocalDateTime openTime;
+    private LocalDateTime closeTime;
 
     private BigDecimal openPrice;
+    private BigDecimal closePrice;
+
+    private BigDecimal high;
+    private BigDecimal low;
 
     public void prettyPrint() {
-        log.info("Symbol: " + this.getSymbol());
-        log.info("NumberOfTrades: " + this.getNumberOfTrades());
+        log.info("Symbol: " + this.symbol);
+        log.info("NumberOfTrades: " + this.numberOfTrades);
+        log.info("volume: " + this.volume);
+        log.info("takerBuyBaseAssetVolume: " + this.takerBuyBaseAssetVolume);
+        log.info("eventTime: " + this.eventTime);
         log.info("OpenTime: " + this.openTime);
+        log.info("closeTime: " + this.closeTime);
         log.info("Open: " + this.openPrice);
+        log.info("Close: " + this.closePrice);
+        log.info("High: " + this.high);
+        log.info("Low: " + this.low);
         log.info("");
     }
 
