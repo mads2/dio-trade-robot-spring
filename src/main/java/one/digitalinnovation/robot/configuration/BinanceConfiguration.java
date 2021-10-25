@@ -17,6 +17,12 @@ public class BinanceConfiguration {
     private String pass;
 
     @Bean
+    public BinanceApiRestClient binanceRestClient() {
+        BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(auth, pass);
+        return factory.newRestClient();
+    }
+
+    @Bean
     public BinanceApiAsyncRestClient binanceAsyncRestClient() {
         BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(auth, pass);
         return factory.newAsyncRestClient();

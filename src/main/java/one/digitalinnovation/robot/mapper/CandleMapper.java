@@ -30,7 +30,7 @@ public class CandleMapper {
                 .build();
     }
 
-    private LocalDateTime getDateTimeFromEpoch(long eventTime) {
+    public static LocalDateTime getDateTimeFromEpoch(long eventTime) {
         return Instant.ofEpochMilli(eventTime).atZone(ZoneId.systemDefault()).toLocalDateTime();
     }
 
